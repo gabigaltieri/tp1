@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int hora,minuto,opciones,velocidad=0;
+    char giro;
+
+    enum velocidad {VELOCIDAD_MINIMA=1, VELOCIDAD_INTERMEDIA, VELOCIDAD_MAXIMA, APAGAR, SALIR};
+    printf("ingrese la opcion deseada: \n 1_VELOCIDAD MINIMA\n 2_VELOCIDAD INTERMEDIA\n 3_VELOCIDAD MAXIMA\n 4_APAGAR\n 5_SALIR\n");
+    scanf("%d",&velocidad);
+    while (velocidad != 5)
+    {
+
+
+        switch(velocidad)
+        {
+        case VELOCIDAD_MINIMA:
+            printf("introduzca el sentido de giro (H/A)\n");
+            scanf(" %c",&giro);
+            printf("introduzca el tiempo de encendido en horas\n");
+            scanf("%d",&hora);
+            minuto= hora*60;
+            printf("Motor encendido con velocidad %d y sentido de giro %c durante %d minutos\n",velocidad,giro,minuto);
+            break;
+        case VELOCIDAD_INTERMEDIA:
+            printf("introduzca el sentido de giro (H/A)\n");
+            scanf(" %c",&giro);
+            printf("introduzca el tiempo de encendido en horas\n");
+            scanf("%d",&hora);
+            minuto= hora*60;
+            printf("Motor encendido con velocidad %d y sentido de giro %c durante %d minutos\n",velocidad,giro,minuto);
+            break;
+
+        case VELOCIDAD_MAXIMA:
+            printf("introduzca el sentido de giro (H/A)\n");
+            scanf(" %c",&giro);
+            printf("introduzca el tiempo de encendido en horas\n");
+            scanf("%d",&hora);
+            minuto= hora*60;
+            printf("Motor encendido con velocidad %d y sentido de giro %c durante %d minutos\n",velocidad,giro,minuto);
+            break;
+        case APAGAR:
+            velocidad=0;
+            printf("motor apagado\n");
+            break;
+        case SALIR:
+            if (velocidad==3 && hora>=3)
+            {
+                printf("el motor ha estado funcionando al menos 3 horas a velocidad máxima\n");
+
+            }
+            else
+            {
+                printf("El motor no ha estado funcionando en condiciones exigentes\n");
+            }break;
+        default:
+            printf("hasta luego\n");
+
+        }
+        printf("ingrese la opcion deseada: \n 1_VELOCIDAD MINIMA\n 2_VELOCIDAD INTERMEDIA\n 3_VELOCIDAD MAXIMA\n 4_APAGAR\n 5_SALIR\n");
+        scanf("%d",&velocidad);
+    }
+    system("pause");
+    return 0;
+}
